@@ -99,35 +99,47 @@ flowchart LR
     Review -->|changes requested<br/>back to In Progress| Execute
     Review -->|approved<br/>verdicts posted| Merge([👤<br/>Phase 4 · Merge<br/>Human<br/>Done])
 ```
-
 <table>
 <tr>
 <td align="center" valign="top" width="33%">
 <strong>Phase 1 · Plan</strong><br>
 <code>jira-task-assigner</code><br>
 <a href="https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/task-lifecycle/TASK-LIFECYCLE-PHASE-1.md">Full diagram &amp; notes →</a><br><br>
-<a href="https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/task-lifecycle/TASK-LIFECYCLE-PHASE-1.md"
-   style="display:inline-block; width:260px; height:300px; background:url('https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/docs/assets/task-lifecycle-phase-1.svg') top / cover no-repeat;">
+<a href="https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/task-lifecycle/TASK-LIFECYCLE-PHASE-1.md">
+  <div style="width:260px; height:450px; overflow:hidden;">
+    <img src="https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/docs/assets/task-lifecycle-phase-1.svg"
+         alt="Phase 1 (Plan) sequence diagram"
+         style="width:260px; height:auto; display:block;">
+  </div>
 </a>
 </td>
 <td align="center" valign="top" width="33%">
 <strong>Phase 2 · Implement</strong><br>
 <code>jira-task-executor</code><br>
 <a href="https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/task-lifecycle/TASK-LIFECYCLE-PHASE-2.md">Full diagram &amp; notes →</a><br><br>
-<a href="https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/task-lifecycle/TASK-LIFECYCLE-PHASE-2.md"
-   style="display:inline-block; width:260px; height:300px; background:url('https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/docs/assets/task-lifecycle-phase-2.svg') top / cover no-repeat;">
+<a href="https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/task-lifecycle/TASK-LIFECYCLE-PHASE-2.md">
+  <div style="width:260px; height:450px; overflow:hidden;">
+    <img src="https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/docs/assets/task-lifecycle-phase-2.svg"
+         alt="Phase 2 (Implement) sequence diagram"
+         style="width:260px; height:auto; display:block;">
+  </div>
 </a>
 </td>
 <td align="center" valign="top" width="33%">
 <strong>Phase 3 · Review &amp; aggregate approval</strong><br>
 <code>jira-task-reviewer</code><br>
 <a href="https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/task-lifecycle/TASK-LIFECYCLE-PHASE-3.md">Full diagram &amp; notes →</a><br><br>
-<a href="https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/task-lifecycle/TASK-LIFECYCLE-PHASE-3.md"
-   style="display:inline-block; width:260px; height:300px; background:url('https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/docs/assets/task-lifecycle-phase-3.svg') top / cover no-repeat;">
+<a href="https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/task-lifecycle/TASK-LIFECYCLE-PHASE-3.md">
+  <div style="width:260px; height:450px; overflow:hidden;">
+    <img src="https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/docs/assets/task-lifecycle-phase-3.svg"
+         alt="Phase 3 (Review) sequence diagram"
+         style="width:260px; height:auto; display:block;">
+  </div>
 </a>
 </td>
 </tr>
 </table>
+
 
 See **[Task lifecycle](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/task-lifecycle/TASK-LIFECYCLE.md)** for the
 full phase-by-phase breakdown (skills, Jira states, and per-phase steps).
