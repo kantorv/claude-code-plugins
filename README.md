@@ -54,7 +54,6 @@ Additionally, check for any redundant code.
 Reference: cropapp/catalog/views.py, lines 1265–1676"
 ```
 
-
 <img src="https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/assets/claude-code-plugins-eefd438c-7cc4-4ffe-9bae-b429108bef70.jsonl.gif" alt="Example conversation with the assigner, executor, and reviewer skills (placeholder recording — will be replaced)" width="800">
 
 ### JIRA-TASK-EXECUTOR
@@ -78,13 +77,12 @@ claude
 
 <img src="https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/assets/claude-code-plugins-2c92cf94-1470-4d6a-9797-96355658a3f5.jsonl.gif" alt="Example conversation with the assigner, executor, and reviewer skills (placeholder recording — will be replaced)" width="800">
 
-
-
 ## Environment setup - see [`INSTALLATION-STEP-BY-STEP.md`](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/setup/STEP-BY-STEP.md)
 
 You will need:
 
 - **GitHub**
+
   - Account (can be free)
   - Repository
   - PAT token (repo-scoped) with the following permissions:
@@ -92,8 +90,8 @@ You will need:
     - `Pull requests` (read/write)
     - `Meta` (read) - added automatically
 
-
 - **Jira**
+
   - Account (can be free)
   - Space with a Board (you will have a `Project Key`, e.g. `XYZ`)
   - At least 4 states (names can differ):
@@ -101,42 +99,44 @@ You will need:
     - `IN_PROGRESS`
     - `IN_REVIEW`
     - `DONE`
-  - Users: can be only the owner, or additionally a dedicated user per each of the skills -  `assigner`, `executor`, `reviewer` (fits the free tier - up to 10 users in org).
+  - Users: can be only the owner, or additionally a dedicated user per each of the skills - `assigner`, `executor`, `reviewer` (fits the free tier - up to 10 users in org).
   - Classic Scoped token (either for owner, or for each otf the 3 users - `assigner`, `executor`, `reviewer`) with the following permissions:
     - `read:jira-user`
     - `read:jira-work`
     - `write:jira-work`
 
-
-
 - **Coding Assistant**
-  - Claude or any other compatible solution  
+
+  - Claude or any other compatible solution\
     (see [Platform Compatibility Matrix](#platform-compatibility-matrix))
 
 - **Software**
-  - Install `git`, `gh`, and `jq`  
+
+  - Install `git`, `gh`, and `jq`\
     (see [Prerequisites](https://github.com/kantorv/jira-sdlc-tools/blob/development/docs/setup/STEP-BY-STEP.md#prerequisites))
 
-Check out the full installation docs:  
+Check out the full installation docs:\
 [`docs/setup/STEP-BY-STEP.md`](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/setup/STEP-BY-STEP.md)
+
 ## Quick install
 
 ### Claude Code
 
 #### Remote — from the marketplace (recommended)
+
 ##### from console
+
 ```
 claude plugin marketplace add kantorv/jira-sdlc-tools
 claude plugin install jira-sdlc@jira-sdlc-tools
 ```
 
-##### from within claude code 
+##### from within claude code
+
 ```
 /plugin marketplace add kantorv/jira-sdlc-tools
 /plugin install jira-sdlc@jira-sdlc-tools
 ```
-
-
 
 #### Local — clone, then load with `--plugin-dir`
 
@@ -237,7 +237,6 @@ flowchart LR
 </td>
 </tr>
 </table>
-
 
 ## What's here
 
