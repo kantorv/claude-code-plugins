@@ -17,8 +17,8 @@ for Claude, `allow_implicit_invocation: false` for agentskills.io.
 
 Jira and Atlassian are trademarks or registered trademarks of Atlassian
 Pty Ltd, in the United States and/or other countries. This is an
-independent, community-built project that integrates with Jira through
-its public CLI and APIs; it is not affiliated with, endorsed by, or
+**independent**, community-built project that integrates with Jira through
+its public CLI and APIs; it is **not affiliated** with, endorsed by, or
 sponsored by Atlassian, and its references to Jira are solely to
 describe compatibility.
 
