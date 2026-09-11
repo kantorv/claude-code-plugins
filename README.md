@@ -41,39 +41,76 @@ What it deliberately never does on its own — merging into your base
 branch, deleting Jira issues, resolving conflicts — is listed in
 [Safety model](https://github.com/kantorv/jira-sdlc-tools/blob/main/plugins/jira-sdlc/README.md#safety-model).
 
-## Environment setup
+## Environment setup - see [`INSTALLATION-STEP-BY-STEP.md`](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/setup/STEP-BY-STEP.md)
 
-You will need
+You will need:
 
-- **Git account + Repository + PAT token** — a GitHub (or GitLab/Bitbucket) account and a repository to work in
-- **Jira account + Board + Token(s)** — a Jira Cloud instance with a project/space where issues will be created
-- **Coding Assistant** (Claude or any other compatible solution — see [Platform Compatibility Matrix](#platform-compatibility-matrix))
+- **GitHub**
+  - Account (can be free)
+  - Repository
+  - PAT token (repo-scoped) with the following permissions:
+    - `Contents` (read/write)
+    - `Pull requests` (read/write)
+    - `Meta` (read) - added automatically
 
-Check out installation docs [`docs/setup/STEP-BY-STEP.md`](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/setup/STEP-BY-STEP.md).
 
+- **Jira**
+  - Account (can be free)
+  - Space with a Board (you will have a `Project Key`, e.g. `XYZ`)
+  - At least 4 states (names can differ):
+    - `TODO`
+    - `IN_PROGRESS`
+    - `IN_REVIEW`
+    - `DONE`
+  - Users: can be only the owner, or additionally a dedicated user per each of the skills -  `assigner`, `executor`, `reviewer` (fits the free tier - up to 10 users in org).
+  - Classic Scoped token (either for owner, or for each otf the 3 users - `assigner`, `executor`, `reviewer`) with the following permissions:
+    - `read:jira-user`
+    - `read:jira-work`
+    - `write:jira-work`
+
+
+
+- **Coding Assistant**
+  - Claude or any other compatible solution  
+    (see [Platform Compatibility Matrix](#platform-compatibility-matrix))
+
+- **Software**
+  - Install `git`, `gh`, and `jq`  
+    (see [Prerequisites](https://github.com/kantorv/jira-sdlc-tools/blob/development/docs/setup/STEP-BY-STEP.md#prerequisites))
+
+Check out the full installation docs:  
+[`docs/setup/STEP-BY-STEP.md`](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/setup/STEP-BY-STEP.md)
 ## Quick install
 
 ### Claude Code
 
 #### Remote — from the marketplace (recommended)
+##### from console
+```
+claude plugin marketplace add kantorv/jira-sdlc-tools
+claude plugin install jira-sdlc@jira-sdlc-tools
+```
 
+##### from within claude code 
 ```
 /plugin marketplace add kantorv/jira-sdlc-tools
 /plugin install jira-sdlc@jira-sdlc-tools
 ```
 
+
+
 #### Local — clone, then load with `--plugin-dir`
 
 ```bash
 git clone https://github.com/kantorv/jira-sdlc-tools.git
-claude --plugin-dir ./jira-sdlc-tools/plugins/jira-sdlc
+claude --plugin-dir <PATH-TO>/jira-sdlc-tools/plugins/jira-sdlc
 ```
 
 See full doc: [CLAUDECODE.md](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/integrations/CLAUDECODE.md)
 
 ### Non Claude Code assistants
 
-This plugin can also be installed as a loose skill set with various coding assistants other than Claude Code, [Antigravity](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/integrations/ANTIGRAVITY.md), [Cursor](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/integrations/CURSOR.md), [Kimi Code](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/integrations/KIMI-CODE.md), and more. See the [Platform Compatibility Matrix](#platform-compatibility-matrix) for the full list and integration status per platform.
+This plugin can also be installed as a loose skill set with various coding assistants other than Claude Code, [Codex](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/integrations/CODEX.md) [Antigravity](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/integrations/ANTIGRAVITY.md), [Cursor](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/integrations/CURSOR.md), [Kimi Code](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/integrations/KIMI-CODE.md), and more. See the [Platform Compatibility Matrix](#platform-compatibility-matrix) for the full list and integration status per platform.
 
 ## Platform Compatibility Matrix
 
