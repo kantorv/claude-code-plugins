@@ -41,6 +41,45 @@ What it deliberately never does on its own — merging into your base
 branch, deleting Jira issues, resolving conflicts — is listed in
 [Safety model](https://github.com/kantorv/jira-sdlc-tools/blob/main/plugins/jira-sdlc/README.md#safety-model).
 
+## Examples
+
+### JIRA-TASK-ASSIGNER
+
+```bash
+claude
+> /jira-sdlc:jira-task-assigner "Refactor the InstantProductViewset create action.
+The action is currently separated into two perform_create methods.
+Investigate the code to determine whether this flow could be simplified.
+Additionally, check for any redundant code.
+Reference: cropapp/catalog/views.py, lines 1265–1676"
+```
+
+
+<img src="https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/assets/claude-code-plugins-eefd438c-7cc4-4ffe-9bae-b429108bef70.jsonl.gif" alt="Example conversation with the assigner, executor, and reviewer skills (placeholder recording — will be replaced)" width="800">
+
+### JIRA-TASK-EXECUTOR
+
+```bash
+# cd into each worktree it creates, run this in each one (no key —
+# derived from that worktree's branch):
+claude
+> /jira-sdlc:jira-task-executor 
+```
+
+<img src="https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/assets/claude-code-plugins-1d92236c-4a57-4b3a-a902-e42d1c032128.jsonl.gif" alt="Example conversation with the assigner, executor, and reviewer skills (placeholder recording — will be replaced)" width="800">
+
+### JIRA-TASK-REVIEWER
+
+```bash
+# once the sub-task's PR is up, run from the same worktree:
+claude
+> /jira-sdlc:jira-task-reviewer 
+```
+
+<img src="https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/assets/claude-code-plugins-2c92cf94-1470-4d6a-9797-96355658a3f5.jsonl.gif" alt="Example conversation with the assigner, executor, and reviewer skills (placeholder recording — will be replaced)" width="800">
+
+
+
 ## Environment setup - see [`INSTALLATION-STEP-BY-STEP.md`](https://github.com/kantorv/jira-sdlc-tools/blob/main/docs/setup/STEP-BY-STEP.md)
 
 You will need:
@@ -199,37 +238,6 @@ flowchart LR
 </tr>
 </table>
 
-## Examples
-
-### JIRA-TASK-ASSIGNER
-
-```bash
-claude
-> /jira-sdlc:jira-task-assigner "Refactor the InstantProductViewset create action. The action is currently separated into two perform_create methods. Investigate the code to determine whether this flow could be simplified. Additionally, check for any redundant code. Reference: cropapp/catalog/views.py, lines 1265–1676"
-```
-
-<img src="https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/assets/claude-code-plugins-eefd438c-7cc4-4ffe-9bae-b429108bef70.jsonl.gif" alt="Example conversation with the assigner, executor, and reviewer skills (placeholder recording — will be replaced)" width="800">
-
-### JIRA-TASK-EXECUTOR
-
-```bash
-# cd into each worktree it creates, run this in each one (no key —
-# derived from that worktree's branch):
-claude
-> /jira-sdlc:jira-task-executor 
-```
-
-<img src="https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/assets/claude-code-plugins-1d92236c-4a57-4b3a-a902-e42d1c032128.jsonl.gif" alt="Example conversation with the assigner, executor, and reviewer skills (placeholder recording — will be replaced)" width="800">
-
-### JIRA-TASK-REVIEWER
-
-```bash
-# once the sub-task's PR is up, run from the same worktree:
-claude
-> /jira-sdlc:jira-task-reviewer 
-```
-
-<img src="https://raw.githubusercontent.com/kantorv/jira-sdlc-tools/main/assets/claude-code-plugins-2c92cf94-1470-4d6a-9797-96355658a3f5.jsonl.gif" alt="Example conversation with the assigner, executor, and reviewer skills (placeholder recording — will be replaced)" width="800">
 
 ## What's here
 
